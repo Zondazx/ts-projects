@@ -9,7 +9,7 @@ enum Player {
 
 let gameActive = true;
 let currentPlayer: Player = Player.X;
-let gameState: string[] = ["", "", "", "", "", "", "", "", ""];
+let gameState = ["", "", "", "", "", "", "", "", ""];
 const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
