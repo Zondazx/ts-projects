@@ -1,7 +1,3 @@
-const statusDisplay = document.querySelector(".game--status") as HTMLElement;
-const restart = document.querySelector(".game--restart");
-const cells: NodeList = document.querySelectorAll(".cell");
-
 enum Player {
     X = "X",
     O = "O"
@@ -10,6 +6,11 @@ enum Player {
 let gameActive = true;
 let currentPlayer: Player = Player.X;
 let gameState = ["", "", "", "", "", "", "", "", ""];
+
+const statusDisplay = document.querySelector(".game--status") as HTMLElement;
+const restart = document.querySelector(".game--restart");
+const cells: NodeList = document.querySelectorAll(".cell");
+
 const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -61,7 +62,9 @@ function handleResultValidation(): void {
         return;
     }
     
-    let draw = !gameState.includes("");
+    // let draw = !gameState.includes("");
+    let draw = gameState.every(state => state !== "");
+    // console.log(draw);
 
     if (draw) {
         statusDisplay.innerHTML = drawMessage();

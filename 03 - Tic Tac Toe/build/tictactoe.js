@@ -1,7 +1,3 @@
-"use strict";
-var statusDisplay = document.querySelector(".game--status");
-var restart = document.querySelector(".game--restart");
-var cells = document.querySelectorAll(".cell");
 var Player;
 (function (Player) {
     Player["X"] = "X";
@@ -10,6 +6,9 @@ var Player;
 var gameActive = true;
 var currentPlayer = Player.X;
 var gameState = ["", "", "", "", "", "", "", "", ""];
+var statusDisplay = document.querySelector(".game--status");
+var restart = document.querySelector(".game--restart");
+var cells = document.querySelectorAll(".cell");
 var winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -51,7 +50,10 @@ function handleResultValidation() {
         gameActive = false;
         return;
     }
-    var draw = !gameState.includes("");
+    // let draw = !gameState.includes("");
+    // let draw = gameState.indexOf()
+    var draw = gameState.every(function (state) { return state !== ""; });
+    console.log(draw);
     if (draw) {
         statusDisplay.innerHTML = drawMessage();
         gameActive = false;
