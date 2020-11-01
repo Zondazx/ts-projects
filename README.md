@@ -1,1 +1,1 @@
-# TypeScript Projects
+# TypeScript Tests / Small Projects
