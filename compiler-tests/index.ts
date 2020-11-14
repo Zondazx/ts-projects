@@ -8,4 +8,4 @@ function greet(person: string) {
     console.log(`Good day ${person}`);
 }
 
-greet("Manuel");
+greet("Pepito el chupa pitos");
